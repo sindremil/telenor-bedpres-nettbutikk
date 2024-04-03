@@ -1,6 +1,6 @@
 import type { InjectionKey } from 'vue'
 import { inject, provide, ref } from 'vue'
-import type { CartItem, ShoppingCart, StoreItem } from '@/types'
+import type { CartItem, ShoppingCart, StoreItem } from '../types'
 import { forEach, groupBy } from 'lodash'
 
 export class ShoppingCartStore {
@@ -44,7 +44,7 @@ export class ShoppingCartStore {
   public removeItemFromCart(item?: StoreItem) {
     if (item) {
       this.cart.value.content.splice(
-        this.cart.value.content.findIndex((a) => a.id === item.id),
+        this.cart.value.content.findIndex((a: StoreItem) => a.id === item.id),
         1
       )
     } else {
@@ -64,7 +64,7 @@ export class ShoppingCartStore {
     const groupedBy = groupBy(this.cart.value.content, 'id')
     const countedOccurrences: Array<CartItem> = []
 
-    forEach(groupedBy, (value) => {
+    forEach(groupedBy, (value: Array<StoreItem>) => {
       countedOccurrences.push({
         quantity: value.length,
         totalPrice: Number(value[0].price) * value.length,
