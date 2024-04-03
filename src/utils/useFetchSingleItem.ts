@@ -1,11 +1,11 @@
-import type { StoreItem } from '@/types';
+import type { StoreItem } from '../types'
 
 export const useFetchSingleItem = () => {
   const fetchSingleItem = async (id: string): Promise<StoreItem> => {
-    return await fetch(`https://fakestoreapi.com/products/${id}`).then((res) => res.json());
-  };
+    return { category: '', description: '', id: 0, image: '', price: '', title: '' }
+  }
 
   return {
     fetchSingleItem
-  };
-};
+  }
+}

@@ -11,17 +11,17 @@
 </template>
 
 <script setup lang="ts">
-import ItemContent from '@/components/StoreViewComponents/ItemContent.vue';
-import type { StoreItem } from '@/types';
+import ItemContent from '../../components/StoreViewComponents/ItemContent.vue'
+import type { StoreItem } from '../../types'
 
 defineProps({
   items: {
     type: Array<StoreItem>,
     required: true
   }
-});
+})
 
-defineEmits(['viewItem', 'addItem']);
+defineEmits(['viewItem', 'addItem'])
 </script>
 
 <style scoped>

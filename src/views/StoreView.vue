@@ -13,16 +13,16 @@
 </template>
 
 <script setup lang="ts">
-import ItemOverview from '@/components/StoreViewComponents/ItemOverview.vue'
-import { useFetchData } from '@/utils/useFetchData'
+import ItemOverview from '../components/StoreViewComponents/ItemOverview.vue'
+import { useFetchData } from '../utils/useFetchData'
 import { computed, ref } from 'vue'
-import type { StoreItem } from '@/types'
-import SearchAndFilter from '@/components/StoreViewComponents/SearchAndFilter.vue'
-import { searchAndFilter } from '@/utils/searchAndFilter'
-import { useFetchCategories } from '@/utils/useFetchCategories'
-import { injectShoppingCartStore } from '@/stores/ShoppingCartStore'
+import type { StoreItem } from '../types'
+import SearchAndFilter from '../components/StoreViewComponents/SearchAndFilter.vue'
+import { searchAndFilter } from '../utils/searchAndFilter'
+import { useFetchCategories } from '../utils/useFetchCategories'
+import { injectShoppingCartStore } from '../stores/ShoppingCartStore'
 import { useRouter } from 'vue-router'
-import LoadingIndicator from '@/components/LoadingIndicator.vue'
+import LoadingIndicator from '../components/LoadingIndicator.vue'
 
 const cart = injectShoppingCartStore()
 

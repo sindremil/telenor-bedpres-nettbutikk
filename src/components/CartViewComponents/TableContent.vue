@@ -24,17 +24,17 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
-import type { CartItem } from '@/types';
+import type { PropType } from 'vue'
+import type { CartItem } from '../../types'
 
 defineProps({
   cartItem: {
     type: Object as PropType<CartItem>,
     required: true
   }
-});
+})
 
-defineEmits(['deleteItem', 'addItem']);
+defineEmits(['deleteItem', 'addItem'])
 </script>
 
 <style scoped>

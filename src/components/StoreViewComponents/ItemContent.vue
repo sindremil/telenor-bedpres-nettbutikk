@@ -22,21 +22,21 @@
 </template>
 
 <script setup lang="ts">
-import type { StoreItem } from '@/types';
-import type { PropType } from 'vue';
+import type { StoreItem } from '../../types'
+import type { PropType } from 'vue'
 
 defineProps({
   item: {
     type: Object as PropType<StoreItem>,
     required: true
   }
-});
+})
 
-defineEmits(['viewItem', 'addItem']);
+defineEmits(['viewItem', 'addItem'])
 
 const formatTitle = (title: string) => {
-  return title.split('(')[0];
-};
+  return title.split('(')[0]
+}
 </script>
 
 <style scoped>

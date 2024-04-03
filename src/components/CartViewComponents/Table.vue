@@ -24,41 +24,41 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
-import type { CartItem } from '@/types';
-import { computed } from 'vue';
-import TableContent from '@/components/CartViewComponents/TableContent.vue';
-import TableActionRow from '@/components/CartViewComponents/TableActionRow.vue';
-import TableSummary from '@/components/CartViewComponents/TableSummary.vue';
-import TableHeader from '@/components/CartViewComponents/TableHeader.vue';
+import type { PropType } from 'vue'
+import type { CartItem } from '../../types'
+import { computed } from 'vue'
+import TableContent from '../../components/CartViewComponents/TableContent.vue'
+import TableActionRow from '../../components/CartViewComponents/TableActionRow.vue'
+import TableSummary from '../../components/CartViewComponents/TableSummary.vue'
+import TableHeader from '../../components/CartViewComponents/TableHeader.vue'
 
 const props = defineProps({
   cartItems: {
     type: Array as PropType<Array<CartItem>>,
     required: true
   }
-});
+})
 
-defineEmits(['deleteItem', 'addItem', 'emptyCart', 'checkout']);
+defineEmits(['deleteItem', 'addItem', 'emptyCart', 'checkout'])
 
 const cartQuantity = computed(() => {
-  let total = 0;
+  let total = 0
 
   props.cartItems?.forEach((item) => {
-    total = total + item.quantity;
-  });
+    total = total + item.quantity
+  })
 
-  return total;
-});
+  return total
+})
 const totalCartCost = computed(() => {
-  let total = 0;
+  let total = 0
 
   props.cartItems?.forEach((item) => {
-    total = total + item.totalPrice;
-  });
+    total = total + item.totalPrice
+  })
 
-  return total.toFixed(2);
-});
+  return total.toFixed(2)
+})
 </script>
 
 <style scoped>

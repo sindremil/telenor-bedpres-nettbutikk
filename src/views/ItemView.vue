@@ -25,25 +25,25 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { useFetchSingleItem } from '@/utils/useFetchSingleItem';
-import { computed, ref } from 'vue';
-import type { StoreItem } from '@/types';
-import { injectShoppingCartStore } from '@/stores/ShoppingCartStore';
-import LoadingIndicator from '@/components/LoadingIndicator.vue';
+import { useRoute } from 'vue-router'
+import { useFetchSingleItem } from '../utils/useFetchSingleItem'
+import { computed, ref } from 'vue'
+import type { StoreItem } from '../types'
+import { injectShoppingCartStore } from '../stores/ShoppingCartStore'
+import LoadingIndicator from '../components/LoadingIndicator.vue'
 
-const cart = injectShoppingCartStore();
+const cart = injectShoppingCartStore()
 
-const route = useRoute();
-const { fetchSingleItem } = useFetchSingleItem();
+const route = useRoute()
+const { fetchSingleItem } = useFetchSingleItem()
 
-const itemData = ref<StoreItem>();
+const itemData = ref<StoreItem>()
 
-const id = computed(() => route.params.id as string);
+const id = computed(() => route.params.id as string)
 
-const loading = computed(() => !itemData.value);
+const loading = computed(() => !itemData.value)
 
-fetchSingleItem(id.value).then((item) => (itemData.value = item));
+fetchSingleItem(id.value).then((item) => (itemData.value = item))
 </script>
 
 <style scoped>

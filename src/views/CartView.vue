@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import Table from '@/components/CartViewComponents/Table.vue';
-import { injectShoppingCartStore } from '@/stores/ShoppingCartStore';
+import Table from '../components/CartViewComponents/Table.vue'
+import { injectShoppingCartStore } from '../stores/ShoppingCartStore'
 
-const cart = injectShoppingCartStore();
+const cart = injectShoppingCartStore()
 
 const checkout = (totalCost: string) => {
   if (
@@ -24,13 +24,13 @@ const checkout = (totalCost: string) => {
       `Do you want to checkout with ${totalCost},- \n Click OK, to checkout and get a new cart or Cancel to continue shopping in the same cart`
     )
   ) {
-    cart.emptyCart();
+    cart.emptyCart()
   }
-};
+}
 
 const emptyCart = () => {
   if (confirm('Are you sure you want o clear the cart?')) {
-    cart.emptyCart();
+    cart.emptyCart()
   }
-};
+}
 </script>
