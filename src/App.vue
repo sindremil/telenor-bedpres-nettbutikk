@@ -8,12 +8,7 @@
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { provideShoppingCartStore } from './stores/ShoppingCartStore'
 import Header from './components/Header.vue'
-
-const shoppingCart = provideShoppingCartStore()
-
-shoppingCart.newShoppingCart()
 </script>
 
 <style scoped>
