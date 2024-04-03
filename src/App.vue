@@ -7,13 +7,13 @@
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
-import { provideShoppingCartStore } from '@/stores/ShoppingCartStore';
-import Header from '@/components/Header.vue';
+import { RouterView } from 'vue-router'
+import { provideShoppingCartStore } from './stores/ShoppingCartStore'
+import Header from './components/Header.vue'
 
-const shoppingCart = provideShoppingCartStore();
+const shoppingCart = provideShoppingCartStore()
 
-shoppingCart.newShoppingCart();
+shoppingCart.newShoppingCart()
 </script>
 
 <style scoped>
