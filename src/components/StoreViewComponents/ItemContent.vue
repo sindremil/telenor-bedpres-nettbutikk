@@ -3,7 +3,7 @@
     <h2>{{ item.title }}</h2>
     <img :src="item.image" alt="item image" class="image" />
     <p>{{ item.description }}</p>
-    <p>{{ item.price }}</p>
+    <p>{{ item.price }}$</p>
   </div>
 </template>
 
