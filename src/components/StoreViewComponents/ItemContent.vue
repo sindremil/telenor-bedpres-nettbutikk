@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <h2>{{ item.title }}</h2>
-    <img :src="item.image" alt="item image" class="image" />
+    <img :src="item.image" alt="item image" class="image" height="250" />
     <p>{{ item.description }}</p>
     <p>{{ item.price }}$</p>
   </div>
@@ -17,11 +17,11 @@ defineProps({
   }
 })
 </script>
-  .image {
-    width: 100px;
-  }
-
-  .content {
-    width: 70%;
-  }
-<style scoped></style>
+<style scoped>
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+</style>
