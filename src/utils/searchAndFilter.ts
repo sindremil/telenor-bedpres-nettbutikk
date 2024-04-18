@@ -2,7 +2,17 @@ import type { StoreItem } from '../types'
 
 export const searchAndFilter = () => {
   const performSearch = (items: Array<StoreItem>, search?: string) => {
-    return []
+    if (!search) {
+      return items
+    }
+    const searchLower = search.toLowerCase()
+    const filteredItems = items.filter((item) => {
+      return (
+        item.title.toLowerCase().includes(searchLower) ||
+        item.description.toLowerCase().includes(searchLower)
+      )
+    })
+    return filteredItems
   }
 
   const preformFilter = (items: Array<StoreItem>, category: string) => {
