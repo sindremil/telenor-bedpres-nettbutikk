@@ -1,7 +1,6 @@
 <template>
   <LoadingIndicator v-if="!data" />
   <div v-else class="container">
-    <SearchAndFilter />
     <ItemOverview :items="data" />
   </div>
  

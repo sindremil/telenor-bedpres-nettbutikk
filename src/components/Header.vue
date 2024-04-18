@@ -14,13 +14,6 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        <a :class="getActiveClass('cart')">
-          <RouterLink to="/cart">
-            <font-awesome-icon class="icon_color" icon="cart-shopping" size="xl" />
-          </RouterLink>
-        </a>
-      </li>
     </ul>
   </div>
 </template>
