@@ -6,7 +6,10 @@ export const searchAndFilter = () => {
   }
 
   const preformFilter = (items: Array<StoreItem>, category: string) => {
-    return []
+    const filteredItems = items.filter((item) => {
+      return item.category === category
+    })
+    return filteredItems
   }
 
   return {
