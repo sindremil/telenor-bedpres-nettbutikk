@@ -1,7 +1,9 @@
 <template>
   <div class="content">
     <h2>{{ item.title }}</h2>
+    <img :src="item.image" alt="item image" class="image" />
     <p>{{ item.description }}</p>
+    <p>{{ item.price }}</p>
     <button @click="$emit('addItem', item)">Add to cart</button>
   </div>
 </template>
@@ -16,5 +18,11 @@ defineProps({
   }
 })
 </script>
+  .image {
+    width: 100px;
+  }
 
+  .content {
+    width: 70%;
+  }
 <style scoped></style>
