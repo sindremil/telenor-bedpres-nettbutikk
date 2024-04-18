@@ -4,7 +4,6 @@
     <img :src="item.image" alt="item image" class="image" />
     <p>{{ item.description }}</p>
     <p>{{ item.price }}</p>
-    <button @click="$emit('addItem', item)">Add to cart</button>
   </div>
 </template>
 
