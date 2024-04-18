@@ -1,6 +1,9 @@
 <template>
   <div class="header">
-    <RouterLink to="/" class="heading"> My Super Pro Store </RouterLink>
+    <RouterLink to="/" class="heading">
+      Sett Opp En Shop A!
+      <img src="../assets/logo.png" alt="logo" height="30" width="30" />
+    </RouterLink>
 
     <ul class="nav nav-tabs">
       <li class="nav-item">
@@ -23,13 +26,13 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 
 const getActiveClass = (routeName: string) => {
-  return `nav-link ${routeName === route.name ? 'active' : ''}`;
-};
+  return `nav-link ${routeName === route.name ? 'active' : ''}`
+}
 </script>
 
 <style scoped>
